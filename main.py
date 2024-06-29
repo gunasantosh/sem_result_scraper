@@ -77,12 +77,12 @@ def main():
 
     for i in range(start_number, end_number + 1):
         hall_ticket_number = f"21H71A{i:04d}"
-        result = get_results(hall_ticket_number)
         print(f"Fetching results for: {hall_ticket_number}")
+        result = get_results(hall_ticket_number)
         results.append(result)
         time.sleep(1)
 
-    with open("Student_results.txt", "w") as f:
+    with open("student_records.txt", "w") as f:
         for line in results:
             f.write(f"{line}\n")
 
